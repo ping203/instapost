@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "sdkVersion": "25.0.0",
+    "name": "img",
+    "slug": "instan-post",
+    "privacy": "unlisted",
+    "ios": {
+      "bundleIdentifier": "com.sandra.img"
+    },
+    "android": {
+      "package": "com.sandra.img"
+    }
+
+  }
+}
