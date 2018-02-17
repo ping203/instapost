@@ -28,7 +28,6 @@ const MainTabNavigator = TabNavigator({
     Discover: {
         screen: StoriesFeedTabNavigator,
         navigationOptions: () => ({
-            headerTitle: '(img)',
             tabBarIcon: ({ tintColor }) => (
                 <Touchable hitSlop={makeSlop(20)} feedback='opacity' style={styles.actionBtn} >
                     <Text color={tintColor} style={styles.text}>Discover</Text>
@@ -39,7 +38,6 @@ const MainTabNavigator = TabNavigator({
     Art: {
         screen: FeedTabNavigator,
         navigationOptions: () => ({
-            headerTitle: '(img)',
             tabBarIcon: ({ tintColor }) => (
                 <Touchable hitSlop={makeSlop(20)} feedback='opacity' style={styles.actionBtn} >
                     <Text color={tintColor} style={styles.text}>Art</Text>
@@ -50,7 +48,6 @@ const MainTabNavigator = TabNavigator({
     Stories: {
         screen: StoriesFeedTabNavigator,
         navigationOptions: () => ({
-            headerTitle: '(img)',
             tabBarIcon: ({ tintColor }) => (
                 <View>
                     <Touchable hitSlop={makeSlop(20)} feedback='opacity' color={tintColor} style={styles.actionBtn} >
@@ -64,7 +61,7 @@ const MainTabNavigator = TabNavigator({
     lazy: true,
     tabBarPosition: 'top',
     swipeEnabled: false,
-    initialRouteName: 'Art',
+    initialRouteName: 'Discover',
     tabBarOptions: {
         showIcon: true,
         showLabel: false,

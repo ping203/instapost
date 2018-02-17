@@ -24,7 +24,7 @@ const FeedStack = StackNavigator(
 
 
 const StoriesFeedTabNavigator = TabNavigator({
-    Home: {
+    StoriesFeedHome: {
         screen: FeedStack,
         navigationOptions: () => ({
             header: null,

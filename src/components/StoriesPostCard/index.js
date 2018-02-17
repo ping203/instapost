@@ -57,7 +57,7 @@ class StoriesPostCard extends Component {
         return (
             <View style={styles.root}>
                 <Header />
-                <Image style={styles.img} source={{uri: 'https://www.pinterest.com/eamesoffice/arts-architecture-magazine/g'}} />
+                <Image style={styles.img} source={{uri: 'https://i.pinimg.com/736x/12/f6/89/12f6891c80055d2366f08efb70932421--architecture-magazines-magazine-covers.jpg'}} />
                 <View style={styles.metaWrapper} >
                     <View style={styles.meta} >
                         <View style={styles.titleWrapper}>
