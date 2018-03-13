@@ -11,6 +11,11 @@ class StoriesFeedsScreen extends Component {
         return (
             <ScrollView> 
                 <StoriesPostCard/>
+                <StoriesPostCard/>
+                <StoriesPostCard/>
+                <StoriesPostCard/>
+                <StoriesPostCard/>
+                <StoriesPostCard/>
             </ScrollView>
         );
     }

@@ -3,7 +3,7 @@ import { StackNavigator, TabNavigator } from 'react-navigation';
 import { FontAwesome, Foundation, Feather, EvilIcons } from '@expo/vector-icons';
 
 import { colors } from '../utils/constants';
-import { StoriesFeedsScreen, NotificationsScreen, ExploreScreen, ProfileScreen } from '../screens';
+import { StoriesFeedsScreen, NotificationsScreen, ExploreScreen, ProfileScreen, StorySelectImageScreen } from '../screens';
 
 
 const TAB_ICON_SIZE = 30;
@@ -21,13 +21,11 @@ const FeedStack = StackNavigator(
     }
   );
 
-
-
 const StoriesFeedTabNavigator = TabNavigator({
     StoriesFeedHome: {
         screen: FeedStack,
         navigationOptions: () => ({
-            header: null,
+            // header: null,
             tabBarIcon: ({ tintColor }) => (
                 <Foundation size={TAB_ICON_SIZE} color={tintColor} name='home'/>
             ),
@@ -43,7 +41,7 @@ const StoriesFeedTabNavigator = TabNavigator({
         })
     },
     NewPost: {
-        screen: NotificationsScreen,
+        screen: StorySelectImageScreen,
         navigationOptions: () => ({
             tabBarIcon: ({ tintColor }) => (
                 <FontAwesome size={TAB_ICON_SIZE} color={tintColor} name='plus-square-o' />

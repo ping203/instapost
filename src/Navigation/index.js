@@ -14,13 +14,13 @@ const AppMainNav = StackNavigator({
         backgroundColor: '#F1F6FA'
     },
     navigationOptions: () => ({
-        headerTitle: '(img)',
         headerStyle: {
-            backgroundColor: colors.WHITE
+            backgroundColor: colors.WHITE,
+            height: 50
         },
         headerTitleStyle: {
             fontWeight: 'bold',
-            color: colors.SECONDARY
+            color: colors.SECONDARY,
         }
     })
 });

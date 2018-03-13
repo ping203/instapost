@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     }
 });
 
-export default function Header ({ firstName='Clive', lastName='Cadogan', date= new Date()}) {
+export default function Header ({ firstName='Ricardo', lastName='Cadogan', date= new Date()}) {
     return (
         <View style={styles.root}>
             <View style={styles.meta}>

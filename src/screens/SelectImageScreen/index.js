@@ -1,23 +1,47 @@
 import React, { Component } from 'react';
-import styled from 'styled-components/native';
+import { StyleSheet, View, ScrollView } from 'react-native';
+import { PhotosGallery } from '../../components';
 
-
-const Root = styled.View`
-    backgroundColor: #f2f2f2;
-    flex: 1;
-    paddingTop: 5;
-`;
-const Text = styled.Text``
-
+const styles = StyleSheet.create({
+    root: {
+        backgroundColor: 'red'
+    }
+});
 class SelectImageScreen extends Component {
-    state = {}
-    render() {
+    state = {
+        photos: []
+    }
+        render() {
         return (
-            <Root> 
-                <Text>
-                    Select Image
-                </Text>
-            </Root>
+            <ScrollView style={styles.root}>
+                <View style={{ height: 800, backgroundColor: 'red' }} >
+                    <PhotosGallery
+                        style={{backgroundColor: 'green', flex: 0.25}}
+                        first={20}
+                        groupTypes='Library'
+                        assetType='Photos'
+                    />
+                    <PhotosGallery
+                        style={{backgroundColor: 'yellow', flex: 0.25}}
+                        first={20}
+                        groupTypes='All'
+                        groupName='Favorites'
+                        assetType='Photos'
+                    />
+                    <PhotosGallery
+                        style={{backgroundColor: 'pink', flex: 0.25}}
+                        first={20}
+                        groupTypes='Album'
+                        assetType='Photos'
+                    />
+                    <PhotosGallery
+                        style={{backgroundColor: 'green', flex: 0.25}}
+                        first={20}
+                        groupTypes='All'
+                        assetType='Photos'
+                    />
+                </View>
+            </ScrollView> 
         );
     }
 }

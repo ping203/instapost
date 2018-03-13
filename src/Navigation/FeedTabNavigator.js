@@ -3,8 +3,8 @@ import { StackNavigator, TabNavigator } from 'react-navigation';
 import { FontAwesome, Foundation, Feather, EvilIcons } from '@expo/vector-icons';
 
 import { colors } from '../utils/constants';
-import { FeedScreen, NotificationsScreen, ExploreScreen, ProfileScreen } from '../screens';
-
+import { FeedScreen, NotificationsScreen, ExploreScreen, ProfileScreen, SelectImageScreen } from '../screens';
+import CreateArtPostNavigator from './CreateArtPostNavigator';
 
 const TAB_ICON_SIZE = 30;
 
@@ -42,8 +42,8 @@ const FeedTabNavigator = TabNavigator({
             )
         })
     },
-    NewPost: {
-        screen: NotificationsScreen,
+    CreateArtPost: {
+        screen: CreateArtPostNavigator,
         navigationOptions: () => ({
             tabBarIcon: ({ tintColor }) => (
                 <FontAwesome size={TAB_ICON_SIZE} color={tintColor} name='plus-square-o' />

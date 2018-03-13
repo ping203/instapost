@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 // import styled from 'styled-components/native';
-import { ScrollView } from 'react-native';
-
-import { PostCard } from '../../components';
+import { ScrollView, Text } from 'react-native';
 
 
-class FeedsScreen extends Component {
+
+class DiscoverScreen extends Component {
     state = {}
     render() {
         return (
             <ScrollView> 
-                <PostCard/>
+                <Text> Discover Screen </Text>
             </ScrollView>
         );
     }
 }
 
-export default FeedsScreen;
+export default DiscoverScreen;

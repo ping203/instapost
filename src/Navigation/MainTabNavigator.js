@@ -1,23 +1,33 @@
 import React from 'react';
 import { TabNavigator } from 'react-navigation';
 import { StyleSheet, View, Text } from 'react-native';
-import Touchable from '@appandflow/touchable';
+import { human, systemWeights } from 'react-native-typography'
 
 import { colors } from '../utils/constants';
 import FeedTabNavigator from './FeedTabNavigator';
 import StoriesFeedTabNavigator from './StoriesFeedTabNavigator';
-import { makeSlop } from '../utils/themes';
-
+import { DiscoverScreen } from '../screens'
 
 const styles = StyleSheet.create({
     actionBtn: {
+        // backgroundColor: 'red',
         width: 100,
-        paddingTop: 20,
         justifyContent: 'center',
         alignItems: 'center',
         flex: 1,
         borderBottomWidth: 1,
         marginHorizontal: 16
+    },
+    headerTextWrapper: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+        height: 60,
+    },
+    headerText: {
+        ...human.titleObject,
+        ...systemWeights.bold,
+        fontSize: 18
     },
     text: {},
 });
@@ -26,33 +36,46 @@ const styles = StyleSheet.create({
 
 const MainTabNavigator = TabNavigator({
     Discover: {
-        screen: StoriesFeedTabNavigator,
+        screen: DiscoverScreen,
         navigationOptions: () => ({
+            header: (
+                <View style={styles.headerTextWrapper}>
+                    <Text style={styles.headerText}>(img)</Text>
+                </View>
+            ),
             tabBarIcon: ({ tintColor }) => (
-                <Touchable hitSlop={makeSlop(20)} feedback='opacity' style={styles.actionBtn} >
-                    <Text color={tintColor} style={styles.text}>Discover</Text>
-                </Touchable>
+                <View style={ [ styles.actionBtn, { borderColor: tintColor } ]}>
+                    <Text style={ [ styles.text, { color: tintColor } ] }>Discover</Text>
+                </View>
             ),
         })
     },
     Art: {
         screen: FeedTabNavigator,
         navigationOptions: () => ({
+            header: (
+                <View style={styles.headerTextWrapper}>
+                    <Text style={styles.headerText}>(img)</Text>
+                </View>
+            ),
             tabBarIcon: ({ tintColor }) => (
-                <Touchable hitSlop={makeSlop(20)} feedback='opacity' style={styles.actionBtn} >
-                    <Text color={tintColor} style={styles.text}>Art</Text>
-                </Touchable>
+                <View style={ [ styles.actionBtn, { borderColor: tintColor } ]}>
+                    <Text style={ [ styles.text, { color: tintColor } ] }>Art</Text>
+                </View>
             ),
         })
     },
     Stories: {
         screen: StoriesFeedTabNavigator,
         navigationOptions: () => ({
+            header: (
+                <View style={styles.headerTextWrapper}>
+                    <Text style={styles.headerText}>(img)</Text>
+                </View>
+            ),
             tabBarIcon: ({ tintColor }) => (
-                <View>
-                    <Touchable hitSlop={makeSlop(20)} feedback='opacity' color={tintColor} style={styles.actionBtn} >
-                        <Text color={tintColor} style={styles.text}>Stories</Text>
-                    </Touchable>
+                <View style={ [ styles.actionBtn, { borderColor: tintColor } ]}>
+                    <Text style={ [ styles.text, { color: tintColor } ] }>Stories</Text>
                 </View>
             ),            
         })
@@ -61,7 +84,7 @@ const MainTabNavigator = TabNavigator({
     lazy: true,
     tabBarPosition: 'top',
     swipeEnabled: false,
-    initialRouteName: 'Discover',
+    initialRouteName: 'Art',
     tabBarOptions: {
         showIcon: true,
         showLabel: false,
@@ -69,7 +92,7 @@ const MainTabNavigator = TabNavigator({
         inactiveTintColor: colors.LIGHT_GRAY,
         style: {
             backgroundColor: colors.WHITE,
-            height: 100,
+            height: 60,
             paddingBottom: 20,
             paddingVertical: 5
         }
